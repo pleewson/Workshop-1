@@ -6,7 +6,5 @@ public class Main {
         Files.readFile();
         Methods.selectOption();
 
-        ArrayModifications.printArray();
-
     }
 }
