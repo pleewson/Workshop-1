@@ -7,8 +7,6 @@ public class Main {
         Methods.selectOption();
 
 
-        //ArrayModifications.removeFromArray  // catch exceptions if input isint digit
-        //removeFromArray -> input must be in range.
-
+        //the only problem i see is that when the array is null and you can still delete index 0 from list.
     }
 }
