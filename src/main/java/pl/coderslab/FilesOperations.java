@@ -2,7 +2,6 @@ package pl.coderslab;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,9 +10,16 @@ import java.util.Scanner;
 public class FilesOperations {
 
     public static void readFile() {
-        File file = new File("/Users/adrianplewa/Documents/GitHub/TaskManager/src/tasks.csv");
+        Path path = Paths.get("task.csv");
+        File file = new File("task.csv");
 
         try {
+
+            if (!Files.exists(path)) {
+                Files.createFile(path);
+                System.out.println(Colors.GREEN + "Created new file - task.csv" + Colors.RESET);
+            }
+
             Scanner scan = new Scanner(file);
 
             int i = 0;
@@ -39,7 +45,7 @@ public class FilesOperations {
 
 
     public static void saveToFile() {
-        Path path = Paths.get("TEST.txt");
+        Path path = Paths.get("task.csv");
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < ArrayModifications.mainArray.length; i++) {
