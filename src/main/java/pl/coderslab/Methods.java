@@ -18,9 +18,15 @@ public class Methods {
 
         switch (input) {
             case "add" -> {
-                ArrayModifications.increaseArray();
-                ArrayModifications.addToArray();
-                Methods.selectOption();
+                if(ArrayModifications.mainArray.length == 1 && ArrayModifications.mainArray[0][0] == null) {
+                    ArrayModifications.addToArray();
+                    Methods.selectOption();
+                }else{
+                    ArrayModifications.increaseArray();
+                    ArrayModifications.addToArray();
+                    Methods.selectOption();
+                }
+
             }
             case "remove" -> {
                 ArrayModifications.removeFromArray();

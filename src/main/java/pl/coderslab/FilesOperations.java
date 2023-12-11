@@ -32,14 +32,23 @@ public class FilesOperations {
 
                 if (scan.hasNextLine()) {
                     ArrayModifications.increaseArray();
+
                 }
             }
+
+            /*if(file.length() <= 0){
+                ArrayModifications.mainArray[i][0] = "Its";
+                ArrayModifications.mainArray[i][1] = "Your";
+                ArrayModifications.mainArray[i][2] = "List";
+            }
+
+             */
 
         } catch (IOException ex) {
             System.out.println("error ocurate " + ex.getMessage());
         }
 
-        System.out.println(Colors.GREEN + "Files have been read" + Colors.RESET);
+        System.out.println(Colors.GREEN + "Files has been read" + Colors.RESET);
 
     }
 
