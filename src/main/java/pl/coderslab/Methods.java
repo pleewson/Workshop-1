@@ -22,12 +22,18 @@ public class Methods {
                 ArrayModifications.addToArray();
                 Methods.selectOption();
             }
-            case "remove" -> System.out.println("remove - method");
+            case "remove" -> {
+                ArrayModifications.removeFromArray();
+                Methods.selectOption();
+            }
             case "list" -> {
                 ArrayModifications.printArray();
                 Methods.selectOption();
             }
-            case "exit" -> System.out.println(Colors.RED + "Bye Bye!" + Colors.RESET);
+            case "exit" -> {
+                System.out.println(Colors.RED + "Bye Bye!" + Colors.RESET);
+                FilesOperations.saveToFile();
+            }
             default -> {
                 System.out.println(Colors.RED + "Incorrect input. Try again.");
                 Methods.selectOption();
