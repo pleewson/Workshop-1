@@ -1,5 +1,7 @@
 package pl.coderslab;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,14 +16,12 @@ public class FilesOperations {
         File file = new File("task.csv");
 
         try {
-
             if (!Files.exists(path)) {
                 Files.createFile(path);
                 System.out.println(Colors.GREEN + "Created new file - task.csv" + Colors.RESET);
             }
 
             Scanner scan = new Scanner(file);
-
             int i = 0;
 
             while (scan.hasNextLine()) {
@@ -32,24 +32,18 @@ public class FilesOperations {
 
                 if (scan.hasNextLine()) {
                     ArrayModifications.increaseArray();
-
                 }
             }
 
-            /*if(file.length() <= 0){
-                ArrayModifications.mainArray[i][0] = "Its";
-                ArrayModifications.mainArray[i][1] = "Your";
-                ArrayModifications.mainArray[i][2] = "List";
+            if (ArrayModifications.mainArray.length == 1 && ArrayModifications.mainArray[0][0] == null) {
+                ArrayModifications.mainArray = ArrayUtils.remove(ArrayModifications.mainArray, ArrayModifications.mainArray.length - 1);
             }
-
-             */
 
         } catch (IOException ex) {
             System.out.println("error ocurate " + ex.getMessage());
         }
 
         System.out.println(Colors.GREEN + "Files has been read" + Colors.RESET);
-
     }
 
 
@@ -72,7 +66,5 @@ public class FilesOperations {
         } catch (IOException ex) {
             System.out.println("Error " + ex.getMessage());
         }
-
-
     }
 }

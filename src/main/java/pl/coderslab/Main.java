@@ -6,7 +6,5 @@ public class Main {
         FilesOperations.readFile();
         Methods.selectOption();
 
-
-        //the only problem i see is that when the array is null and you can still delete index 0 from list.
     }
 }
